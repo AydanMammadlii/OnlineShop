@@ -1,5 +1,9 @@
-﻿namespace OnlineShop.Bussiness.Interfaces;
+﻿using OnlineShop.Core.Entities;
 
-public class IBasketProductServices
+namespace OnlineShop.Bussiness.Interfaces;
+
+public interface IBasketProductServices
 {
+    Task CreateBasketProductAsync(int productCount);
+    Task DisableBasketProductAsync(int productCount);
 }

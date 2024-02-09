@@ -15,5 +15,10 @@ public class User
 
     public ICollection<Wallet> Wallets { get; set; }
     public ICollection<Invoice> Invoices { get; set; }
+
+    public static implicit operator User(int v)
+    {
+        throw new NotImplementedException();
+    }
 }
 

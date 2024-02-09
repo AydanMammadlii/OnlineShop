@@ -1,5 +1,8 @@
 ﻿namespace OnlineShop.Bussiness.Interfaces;
 
-public class IProductInvoiceServices
+public interface IProductInvoiceServices
 {
+    Task CreateProductInvoiceAsync(int productCount, decimal productPrice, decimal totalPrice);
+    Task UpdateAsync(int productId, int invoiceId);
+    Task DisableProductInvoiceAsync(int productId);
 }

@@ -38,14 +38,23 @@ public class ProductServices : IProductServices
         var products = await context.Products.Where(p => p.isActive == true).AsNoTracking().ToListAsync();
         foreach (var product in products)
         {
-            Console.WriteLine($"Id: {product.Id}");
-            //??????
+            Console.WriteLine($"Id: {product.Id}\n" + 
+                              $"Name: {product.Name}\n" + 
+                              $"Price: {product.Price}\n" + 
+                              $"Quantity: {product.Quantity}");
         }
     }
 
     public async Task ShowAllDisactiveAsync()
     {
-        throw new NotImplementedException();
+        var products = await context.Products.Where(p => p.isActive == false).AsNoTracking().ToListAsync();
+        foreach (var product in products)
+        {
+            Console.WriteLine($"Id: {product.Id}\n" +
+                              $"Name: {product.Name}\n" +
+                              $"Price: {product.Price}\n" +
+                              $"Quantity: {product.Quantity}");
+        }
     }
 
     public async Task UpdatePriceAsync(int productId, decimal newPrice)
